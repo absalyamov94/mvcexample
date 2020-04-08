@@ -1,0 +1,13 @@
+<!doctype html>
+<meta charset="utf-8">
+<?php if (!$posts): ?>
+    <p>Объявлений пока нет.</p>
+<?php else: ?>
+    <?php foreach ($posts as $post): ?>
+        <article>
+            <h2><?= htmlspecialchars($post->title) ?></h2>
+            <div class="body"><?= htmlspecialchars($post->text) ?></div>
+            <p>Телефон: <?= htmlspecialchars($post->phoneNumber) ?></p>
+        </article>
+    <?php endforeach ?>
+<?php endif ?>
